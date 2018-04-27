@@ -3,10 +3,10 @@ using Newtonsoft.Json;
 
 namespace GitSearch.Domain.Models
 {
-    public class SearchResult : EntityBase
+    public class UserSearchResult : EntityBase
     {
         [JsonProperty("total_count")]
-        public long TotalCount { get; set; }
+        public int TotalCount { get; set; }
 
         [JsonProperty("incomplete_results")]
         public bool IncompleteResults { get; set; }

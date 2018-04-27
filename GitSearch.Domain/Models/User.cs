@@ -9,7 +9,7 @@ namespace GitSearch.Domain.Models
         public string Login { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("avatar_url")]
         public string AvatarUrl { get; set; }
@@ -78,16 +78,16 @@ namespace GitSearch.Domain.Models
         public string Bio { get; set; }
 
         [JsonProperty("public_repos")]
-        public long PublicRepos { get; set; }
+        public int PublicRepos { get; set; }
 
         [JsonProperty("public_gists")]
-        public long PublicGists { get; set; }
+        public int PublicGists { get; set; }
 
         [JsonProperty("followers")]
-        public long Followers { get; set; }
+        public int Followers { get; set; }
 
         [JsonProperty("following")]
-        public long Following { get; set; }
+        public int Following { get; set; }
 
         [JsonProperty("created_at")]
         public DateTimeOffset CreatedAt { get; set; }

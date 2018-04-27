@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitSearch.Domain", "GitSear
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitSearch.Repositories", "GitSearch.Repositories\GitSearch.Repositories.csproj", "{72B0C103-441D-46B4-81D5-FD5EDE08183D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitSearch.Services", "GitSearch.Services\GitSearch.Services.csproj", "{798AFEBE-B1FF-4CE5-BAF6-B549CDEA2EA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitSearch.Application", "GitSearch.Application\GitSearch.Application.csproj", "{3EB6047C-BC4B-4371-B60B-C39E1324CCA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{72B0C103-441D-46B4-81D5-FD5EDE08183D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72B0C103-441D-46B4-81D5-FD5EDE08183D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72B0C103-441D-46B4-81D5-FD5EDE08183D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{798AFEBE-B1FF-4CE5-BAF6-B549CDEA2EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{798AFEBE-B1FF-4CE5-BAF6-B549CDEA2EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{798AFEBE-B1FF-4CE5-BAF6-B549CDEA2EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{798AFEBE-B1FF-4CE5-BAF6-B549CDEA2EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB6047C-BC4B-4371-B60B-C39E1324CCA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB6047C-BC4B-4371-B60B-C39E1324CCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB6047C-BC4B-4371-B60B-C39E1324CCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EB6047C-BC4B-4371-B60B-C39E1324CCA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

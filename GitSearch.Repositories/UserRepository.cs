@@ -19,8 +19,8 @@ namespace GitSearch.Repositories
                 {"page", pageNumber.ToString()}
             });
 
-            var jsonUser = await GetResponseString(url);
-            return JsonConvert.DeserializeObject<UserSearchResult>(jsonUser);
+            var response = await GetResponseString(url);
+            return JsonConvert.DeserializeObject<UserSearchResult>(await response.Content.ReadAsStringAsync());
         }
     }
 }

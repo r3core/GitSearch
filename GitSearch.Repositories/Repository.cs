@@ -16,32 +16,33 @@ namespace GitSearch.Repositories
         public async Task<TEntity> GetByName(string action, string name)
         {
             var uri =  BuildUri($"{action}/{name}");
-            var jsonEntity = await GetResponseString(uri);
-            return JsonConvert.DeserializeObject<TEntity>(jsonEntity);
+            var response = await GetResponseString(uri);
+            return JsonConvert.DeserializeObject<TEntity>(await response.Content.ReadAsStringAsync());
         }
 
-        protected static async Task<string> GetResponseString(string uri)
+        protected static async Task<HttpResponseMessage> GetResponseString(Uri uri)
         {
             using (var httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Add("User-Agent", "C# App");
                 try
                 {
-                    return await httpClient.GetStringAsync(uri);
+                    var response = await httpClient.GetAsync(uri);
+                    response.EnsureSuccessStatusCode();
+                    return response;
                 }
                 catch(HttpRequestException e)
                 {
                     Console.WriteLine(e);
+                    throw;
                 }
-
-                return "";
             }
         }
 
-        protected string BuildUri(string appendables, Dictionary<string, string> queryParameters = null)
+        protected Uri BuildUri(string appendables, Dictionary<string, string> queryParameters = null)
         {
             var builder = new UriBuilder($"{ApiUri}/{appendables}") {Port = -1};
-            if (queryParameters == null) return builder.ToString();
+            if (queryParameters == null) return builder.Uri;
 
             var query = HttpUtility.ParseQueryString(builder.Query);
             foreach (var entry in queryParameters)
@@ -50,7 +51,7 @@ namespace GitSearch.Repositories
             }
             builder.Query = query.ToString();
 
-            return builder.ToString();
+            return builder.Uri;
         }
     }
 }

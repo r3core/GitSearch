@@ -1,0 +1,76 @@
+﻿@model UserViewModelCollection
+@{
+    ViewData["Title"] = "GitSearch";
+}
+
+<!--<div id="container-mid">
+    <h3>@ViewData["Title"] </h3>
+    <P> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis id non quidem voluptas nisi molestiae et facere ut voluptatum impedit architecto maiores eius ipsum, eum in, at adipisci inventore vel.</P>
+    <button>ding</button>
+    <button>dong</button>
+</div>-->
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>@ViewData["Title"]</h1>
+        <p class="lead">Search for GitHub users</p>
+    </div>
+    <!--<form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <div class="col-md-4 text-center">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
+    </form>-->
+    <div class="container bootstrap snippet">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        @if (ViewData["searchString"] != null)
+                        {
+                            <h2>
+                                @Model.TotalCount results found for: <span class="text-navy">"@ViewData["searchString"]"</span>
+                            </h2>
+                        }
+
+                        <div class="search-form">
+                            <form asp-controller="Users" asp-action="Index" method="get">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Enter a name or a github username" name="searchString" class="form-control input-lg" value=@(ViewData["searchString"] ?? string.Empty)>
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-lg btn-primary" type="submit">
+                                            Search
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        @foreach (var user in Model.Users)
+                        {
+                            <div class="hr-line-dashed"></div>
+                            <div class="search-result">
+                                <h3><a href="#">@user.Login</a></h3>
+                                <a href="#" class="search-link">@user.Url</a>
+                            </div>
+                        }
+                        @if (Model.Users.Any())
+                        {
+                            <div class="hr-line-dashed"></div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (Model.Users.Any())
+    {
+        <div class="paginbar">
+            <ul class="pagination">
+                <li><a class="page-link" href="#">Previous</a></li>
+                <li class="active"><a class="page-link" href="#">1</a></li>
+                <li><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </div>
+    }
+</div>

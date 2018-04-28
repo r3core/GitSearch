@@ -26,26 +26,45 @@ namespace GitSearch.Web.Controllers
 
         public async Task<IActionResult> Index(string searchString, int pageNumber = 1)
         {
+            var pageSize = int.TryParse(_configuration["Pagination:PageSize"], out var size) && size > 0
+                ? size
+                : DefaultPageSize;
+
+            pageNumber = pageNumber > 0 ? pageNumber : 1;
+
             if (!string.IsNullOrWhiteSpace(searchString))
             {
+                var users = await _userService.GetSearchResult(searchString, pageSize, pageNumber);
+                var maxPageCount = MaxPageCount(users.TotalCount);
+                if (pageNumber > maxPageCount)
+                {
+                    pageNumber = maxPageCount;
+                    users = await _userService.GetSearchResult(searchString, pageSize, pageNumber);
+                }
+
                 ViewData["searchString"] = searchString;
-                var pageSize = int.TryParse(_configuration["Pagination:PageSize"], out var size)
-                    ? size
-                    : DefaultPageSize;
-                return View(await _userService.GetSearchResult(searchString, pageSize, pageNumber));
+                ViewData["pageNumber"] = pageNumber;
+                ViewData["hasPrevious"] = HasPrevious();
+                ViewData["hasNext"] = HasNext(users.TotalCount);
+
+                return View(users);
             }
             return View(new UserViewModelCollection()
             {
                 Users = new List<UserViewModel>()
             });
+
+            bool HasPrevious() => pageNumber > 1;
+            bool HasNext(int total) => (pageNumber * pageSize) < total;
+            int MaxPageCount(int total) => total % pageSize != 0
+                ? total / pageSize + 1
+                : total / pageSize;
         }
 
-        public async Task<IActionResult> Details(string name)
+        public async Task<IActionResult> Details(string username)
         {
-            //var user = await _userService.GetByName("r3core");
-
-            var users = await _userService.GetSearchResult("Ravindu", 5, 1);
-            return View();
+            var user = await _userService.GetByName(username);
+            return View(user);
         }
 
         public IActionResult Contact()

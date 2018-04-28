@@ -1,3 +1,34 @@
-﻿@{
+﻿@model UserViewModel
+@{
     ViewData["Title"] = "User Details";
 }
+
+<div class="container">
+    <div class="starter-template">
+        <div>
+            <img src="@Model.AvatarUrl" class="roundCorners img-responsive" alt="">
+        </div>
+        <div class="profile-usertitle-name">
+            <h3>@Model.Login</h3>
+            <a href="@Model.Url" target="_blank"></a>
+        </div>
+        <div class="profile-usertitle-job">
+            <h4>@Model.Name</h4>
+        </div>
+        <p class="lead">@Model.Bio</p>
+        <p>Public Repository Count: @Model.PublicRepos</p>
+        <div class="proflinkcont">
+            <div class="proflinkpar">
+                <ul class="proflinks">
+                    @if (!string.IsNullOrWhiteSpace(Model.Blog))
+                    {
+                        <li><a href="@Model.Blog" target="_blank">Blog/Personal Website</a></li>
+                    }
+                    
+                    <li><a href="@Model.ReposUrl" target="_blank">Repositories</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

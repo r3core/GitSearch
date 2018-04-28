@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitSearch.Web", "GitSearch.Web\GitSearch.Web.csproj", "{B62C3F1D-552B-40C6-B782-2703478F74B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitSearch.Web", "GitSearch.Web\GitSearch.Web.csproj", "{B62C3F1D-552B-40C6-B782-2703478F74B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitSearch.Domain", "GitSearch.Domain\GitSearch.Domain.csproj", "{C7D123A0-9953-42EA-B1CD-315D90E942CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitSearch.Domain", "GitSearch.Domain\GitSearch.Domain.csproj", "{C7D123A0-9953-42EA-B1CD-315D90E942CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitSearch.Repositories", "GitSearch.Repositories\GitSearch.Repositories.csproj", "{72B0C103-441D-46B4-81D5-FD5EDE08183D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitSearch.Repositories", "GitSearch.Repositories\GitSearch.Repositories.csproj", "{72B0C103-441D-46B4-81D5-FD5EDE08183D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitSearch.Application", "GitSearch.Application\GitSearch.Application.csproj", "{3EB6047C-BC4B-4371-B60B-C39E1324CCA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitSearch.Application", "GitSearch.Application\GitSearch.Application.csproj", "{3EB6047C-BC4B-4371-B60B-C39E1324CCA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitSearch.Api", "GitSearch.Api\GitSearch.Api.csproj", "{00DFA5F3-EFA3-4B89-909D-2FEDFAB44B0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3EB6047C-BC4B-4371-B60B-C39E1324CCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EB6047C-BC4B-4371-B60B-C39E1324CCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EB6047C-BC4B-4371-B60B-C39E1324CCA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00DFA5F3-EFA3-4B89-909D-2FEDFAB44B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00DFA5F3-EFA3-4B89-909D-2FEDFAB44B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00DFA5F3-EFA3-4B89-909D-2FEDFAB44B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00DFA5F3-EFA3-4B89-909D-2FEDFAB44B0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

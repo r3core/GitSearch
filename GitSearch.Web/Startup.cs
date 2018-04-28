@@ -1,8 +1,7 @@
-﻿using System.Reflection;
-using Autofac;
+﻿using Autofac;
 using AutoMapper;
-using GitSearch.Application.Services.Implementations;
-using GitSearch.Repositories;
+using GitSearch.Application.Services.Interfaces;
+using GitSearch.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,16 +27,10 @@ namespace GitSearch.Web
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            /*var assembly = Assembly.GetExecutingAssembly();
-            builder.RegisterAssemblyTypes(assembly)
-                .Where(type => type.Name.EndsWith("Repository"))
+            builder.RegisterAssemblyTypes(typeof(IUserRepository).Assembly)
                 .AsImplementedInterfaces();
-            builder.RegisterAssemblyTypes(assembly)
-                .Where(type => type.Name.EndsWith("Service"))
-                .AsImplementedInterfaces();*/
-
-            builder.RegisterAssemblyTypes(typeof(UserRepository).Assembly).Where(a => a.Name.EndsWith("Repository")).AsImplementedInterfaces();
-            builder.RegisterAssemblyTypes(typeof(UserService).Assembly).AsImplementedInterfaces();
+            builder.RegisterAssemblyTypes(typeof(IUserService).Assembly)
+                .AsImplementedInterfaces();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +43,7 @@ namespace GitSearch.Web
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Users/Error");
             }
 
             app.UseStaticFiles();

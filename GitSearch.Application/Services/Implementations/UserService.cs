@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
 using GitSearch.Application.Services.Interfaces;
 using GitSearch.Application.ViewModels;

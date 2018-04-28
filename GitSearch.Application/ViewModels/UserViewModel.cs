@@ -8,7 +8,7 @@ namespace GitSearch.Application.ViewModels
 
         public string AvatarUrl { get; set; }
 
-        public string Url { get; set; }
+        public string HtmlUrl { get; set; }
 
         public string ReposUrl { get; set; }
 

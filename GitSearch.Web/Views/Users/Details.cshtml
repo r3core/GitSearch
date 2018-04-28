@@ -8,10 +8,11 @@
         <div>
             <img src="@Model.AvatarUrl" class="roundCorners img-responsive" alt="">
         </div>
-        <div class="profile-usertitle-name">
-            <h3>@Model.Login</h3>
-            <a href="@Model.Url" target="_blank"></a>
-        </div>
+        <a href="@Model.HtmlUrl" target="_blank">
+            <div class="profile-usertitle-name">
+                <h3>@Model.Login</h3>
+            </div>
+        </a>
         <div class="profile-usertitle-job">
             <h4>@Model.Name</h4>
         </div>
@@ -24,8 +25,8 @@
                     {
                         <li><a href="@Model.Blog" target="_blank">Blog/Personal Website</a></li>
                     }
-                    
-                    <li><a href="@Model.ReposUrl" target="_blank">Repositories</a></li>
+
+                    <li><a href="@($"https://github.com/{Model.Login}?tab=repositories")" target="_blank">Repositories</a></li>
                 </ul>
             </div>
         </div>

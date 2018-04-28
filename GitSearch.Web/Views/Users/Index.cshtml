@@ -53,7 +53,7 @@
                                 <h3><a asp-controller="Users"
                                        asp-action="Details"
                                        asp-route-username="@user.Login">@user.Login</a></h3>
-                                <a href="@user.Url" target="_blank" class="search-link">@user.Url</a>
+                                <a href="@user.HtmlUrl" target="_blank" class="search-link">@user.HtmlUrl</a>
                             </div>
                         }
                         @if (Model.Users.Any())

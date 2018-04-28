@@ -79,3 +79,66 @@ h2 {
     margin-left: auto;
     width: 20%;
 }
+
+.roundCorners {
+    border-radius: 25px;
+    overflow: hidden;
+    width: 20em;
+    height: 20em;
+}
+
+.profile-usertitle-name {
+    color: #5a7391;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    text-decoration: underline;
+    text-decoration-color: #5a7391;
+}
+
+.profile-usertitle-job {
+    color: #5b9bd1;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.profile-usermenu {
+}
+
+.proflinkcont {
+    text-align: center
+}
+
+.proflinkpar {
+    display: inline-block;
+}
+
+.proflinks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.proflinks li {
+    border-bottom: 1px solid #f0f4f7;
+}
+
+.proflinks li:last-child {
+    border-bottom: none;
+}
+
+.proflinks li a {
+    color: #93a3b5;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.proflinks li a i {
+    font-size: 18px;
+}
+
+.proflinks li a:hover {
+    background-color: #fafcfd;
+    color: #5b9bd1;
+}

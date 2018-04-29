@@ -14,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Installation and Execution
 
-1. Folllow [this guide]([Download](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio)) to install and configure the .NET Core 2.0 Framework and Visual Studio.
+1. Folllow [this guide]((https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio)) to install and configure the .NET Core 2.0 Framework and Visual Studio.
 2. Clone the repository.
 
 ```

@@ -1,6 +1,6 @@
 # GitSearch
 
-A REST (REpresentational State Transfer) API Client built with .NET Core 2.0 that searches for [GitHub](https://github.com/) users leveraging the [GitHub API v3](https://developer.github.com/v3/)
+A web application built with .NET Core 2.0 that searches for [GitHub](https://github.com/) users leveraging the [GitHub API v3](https://developer.github.com/v3/).
 
 ## Getting Started
 
@@ -28,4 +28,13 @@ projects> cd GitSearch
 projects\GitSearch> dotnet run --project .\GitSearch.Web\
 ```
 
-#
+## Additional Configuration
+
+**appsettings.json** of **GitSearch.Web** can be configured to change the number of search results per page.
+```
+    "Pagination": {
+        "PageSize": 10
+    } 
+```
+
+##

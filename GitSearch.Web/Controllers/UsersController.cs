@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using GitSearch.Application.Services.Interfaces;
 using GitSearch.Application.ViewModels;
@@ -12,12 +10,20 @@ using Microsoft.Extensions.Configuration;
 
 namespace GitSearch.Web.Controllers
 {
+    /// <summary>
+    /// Class defining the <see cref="UsersController"/>.
+    /// </summary>
     public class UsersController : Controller
     {
         private readonly IUserService _userService;
         private readonly IConfiguration _configuration;
         private const int DefaultPageSize = 10;
 
+        /// <summary>
+        /// Instantiates the <see cref="UsersController"/>.
+        /// </summary>
+        /// <param name="userService">The injected <see cref="IUserService"/> implementation.</param>
+        /// <param name="configuration">The injected <see cref="IConfiguration"/> implementation.</param>
         public UsersController(IUserService userService, IConfiguration configuration)
         {
             _userService = userService;

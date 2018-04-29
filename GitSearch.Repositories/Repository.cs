@@ -9,6 +9,10 @@ using Newtonsoft.Json;
 
 namespace GitSearch.Repositories
 {
+    /// <summary>
+    /// Generic abstract class created for all <see cref="EntityBase"/> repositories.
+    /// </summary>
+    /// <typeparam name="TEntity">An entity type inheriting <see cref="EntityBase"/></typeparam>
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : EntityBase
     {
         protected const string ApiUri = "https://api.github.com";

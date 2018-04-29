@@ -9,8 +9,15 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace GitSearch.Api
 {
+    /// <summary>
+    /// Class defining the start up configuration of the application.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Creates an instance of <see cref="Startup"/>.
+        /// </summary>
+        /// <param name="configuration">The <see cref="IConfiguration"/> to be injected.</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -18,13 +25,16 @@ namespace GitSearch.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper();
             services.AddMvc();
         }
 
+        /// <summary>
+        /// DI Container configuration for the Application and Repository layer.
+        /// </summary>
+        /// <param name="builder">A <see cref="ContainerBuilder"/> instance.</param>
         public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterAssemblyTypes(typeof(IUserRepository).Assembly)
@@ -33,7 +43,6 @@ namespace GitSearch.Api
                 .AsImplementedInterfaces();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

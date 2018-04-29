@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using GitSearch.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace GitSearch.Api.Controllers
 {
+    /// <summary>
+    /// Class defining the <see cref="UsersController"/>.
+    /// </summary>
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
@@ -14,6 +16,11 @@ namespace GitSearch.Api.Controllers
         private readonly IConfiguration _configuration;
         private const int DefaultResultCount = 5;
 
+        /// <summary>
+        /// Instantiates the <see cref="UsersController"/>.
+        /// </summary>
+        /// <param name="userService">The injected <see cref="IUserService"/> implementation.</param>
+        /// <param name="configuration">The injected <see cref="IConfiguration"/> implementation.</param>
         public UsersController(IUserService userService, IConfiguration configuration)
         {
             _userService = userService;

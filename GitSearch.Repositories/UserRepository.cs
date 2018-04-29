@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Web;
 using GitSearch.Domain.Models;
 using GitSearch.Repositories.Interfaces;
 using Newtonsoft.Json;
 
 namespace GitSearch.Repositories
 {
+    /// <summary>
+    /// Class inheriting <see cref="Repository{TEntity}"/> and <see cref="IUserRepository"/>.
+    /// </summary>
     public class UserRepository : Repository<User>, IUserRepository
     {
         public async Task<UserSearchResult> GetSearchResult(string searchString, int pageSize, int pageNumber)

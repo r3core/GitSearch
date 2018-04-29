@@ -8,11 +8,19 @@ using GitSearch.Repositories.Interfaces;
 
 namespace GitSearch.Application.Services.Implementations
 {
+    /// <summary>
+    /// Service class for and view model transformations.
+    /// </summary>
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// Instantiates a <see cref="UserService"/> instance.
+        /// </summary>
+        /// <param name="userRepository">The injected <see cref="IUserRepository"/> implementation.</param>
+        /// <param name="mapper">The injected <see cref="IMapper"/> implementation of Automapper./></param>
         public UserService(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
